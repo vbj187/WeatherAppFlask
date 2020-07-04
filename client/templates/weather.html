@@ -3,16 +3,38 @@
 
 <head>
     <title>Hello World</title>
-    <link rel="stylesheet" href="{url_for('static',filename='css/styles.css')}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css' )}}" type="text/css">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Weather Now!</h1>
-        <br />
+    <h1 class='text-center p-3'>Weather Now!</h1><br />
+    <div class="input-group w-25 p-5" style="margin-left:37.5%; margin-right: 37.5;">
+        <input type="text" class="form-control" placeholder="Your City" aria-label="Recipient's username"
+            aria-describedby="basic-addon2" id="cityInput">
+        <div class="input-group-append">
+            <button class="btn btn-info" type="button" onclick=getCity()>Go</button>
+        </div>
     </div>
-
+    <div class="container-display">
+        <h1 class='text-center'>{{weather.city}}</h1><br />
+        <div class="container-td">
+            <p>{{weather.temperature}} &#x2103</p><br />
+            <p>{{weather.description}}</p><br />
+        </div>
+        <div class="text-center">
+            <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="image">
+        </div>
+    </div>
+    <script>
+        const getCity = () => {
+            let city = document.getElementById("cityInput").value;
+            alert(`${city}`)
+            document.getElementById('cityInput').value = ""
+        }
+    </script>
 </body>
 
 </html>
