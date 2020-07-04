@@ -4,11 +4,21 @@ body{
     font-family: sans-serif;
 }
 
-.container-display{
-    background-color: #bdc3c7;
-    margin-left: 35%;
+img{
+    vertical-align: middle;
+}
+
+.wsize{
     width: 30%;
+    margin-left: 35%;
+    background-color: #bdc3c7;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.container-display{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
 }
 
 .container-td{
