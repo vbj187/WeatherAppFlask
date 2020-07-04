@@ -15,7 +15,7 @@ def hello_world():
 
 def get_weather(city):
     url = 'https://api.openweathermap.org/data/2.5/weather?q=' +\
-        city+'&appid=59e0ab2e8daad5a2ee361b329adf4b3f'
+        city+'&units=metric&appid=59e0ab2e8daad5a2ee361b329adf4b3f'
     json_response = requests.get(url).json()
     weather_description = json_response["weather"][0]["description"]
     temp = json_response["main"]["temp"]
