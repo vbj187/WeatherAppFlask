@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Weather Now!</title>
+    <title>Hello World</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css' )}}" type="text/css">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -12,25 +12,11 @@
 <body>
     <h1 class='text-center p-3'>Weather Now!</h1><br />
     <form action="/" method="POST">
-        <div class="input-group w-25 p-5 d-inline" style="margin-left:37.5%; margin-right: 37.5;">
+        <div class="input-group w-25 p-5 d-flex" style="margin-left:37.5%; margin-right: 37.5;">
             <input type="text" name="city">
             <input class="btn btn-info" type="submit" value="Go">
         </div>
     </form>
-    {% if city %}
-    <div class="wsize">
-        <h1 class='text-center'>{{weather.city}}</h1><br />
-        <div class="container-display">
-            <div>
-                <p>{{weather.temperature}} &#x2103</p><br />
-                <p>{{weather.description}}</p><br />
-            </div>
-            <div class="text-center">
-                <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="image">
-            </div>
-        </div>
-    </div>
-    {% endif %}
 </body>
 
 </html>
