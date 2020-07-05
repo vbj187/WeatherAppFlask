@@ -17,16 +17,16 @@
             <input class="btn btn-info" type="submit" value="Go">
         </div>
     </form>
-    {% if city %}
-    <div class="wsize">
-        <h1 class='text-center'>{{weather.city}}</h1><br />
+    {% if weather %}
+    <div class="wsize mt-5">
+        <h1 class='text-center'>{{ weather.city }}</h1><br />
         <div class="container-display">
             <div>
-                <p>{{weather.temperature}} &#x2103</p><br />
-                <p>{{weather.description}}</p><br />
+                <p>{{ weather.temperature }} &#x2103</p><br />
+                <p>{{ weather.description }}</p><br />
             </div>
             <div class="text-center">
-                <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="image">
+                <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="image">
             </div>
         </div>
     </div>
